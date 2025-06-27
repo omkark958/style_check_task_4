@@ -84,27 +84,20 @@ class AppDrawer extends StatelessWidget {
             ),
           ),
           ListTile(
-            leading: const Icon(Icons.dashboard, color: Colors.white),
-            title:
-                const Text('Dashboard', style: TextStyle(color: Colors.white)),
-            onTap: () {},
-          ),
-          ListTile(
             leading: const Icon(Icons.store, color: Colors.white),
-            title: const Text('Marketplace',
+            title: const Text('Sales Details',
                 style: TextStyle(color: Colors.white)),
-            onTap: () {},
+            onTap: () {
+              Get.toNamed(AppRoutes.orderdetails);
+            },
           ),
           ListTile(
             leading: const Icon(Icons.settings, color: Colors.white),
-            title:
-                const Text('Settings', style: TextStyle(color: Colors.white)),
-            onTap: () {},
-          ),
-          ListTile(
-            leading: const Icon(Icons.logout, color: Colors.white),
-            title: const Text('Logout', style: TextStyle(color: Colors.white)),
-            onTap: () {},
+            title: const Text('Notification',
+                style: TextStyle(color: Colors.white)),
+            onTap: () {
+              Get.toNamed(AppRoutes.notifications);
+            },
           ),
         ],
       ),
