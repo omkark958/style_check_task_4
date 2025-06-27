@@ -1,16 +1,34 @@
-# style_check_task_4
+# Style Check Task 4
 
-A new Flutter project.
+A Flutter mobile application demonstrating UI components and features like dynamic cards, notifications, filtering, and navigation with GetX.
 
-## Getting Started
+## 🛠 Features
 
-This project is a starting point for a Flutter application.
+- GetX for state management and routing
+- Responsive UI with custom shapes
+- Dynamic cards: Borrow, Lend, Exchange
+- Notification screen with mock data
+- Filter & sort functionality for packages
+- Pull-to-refresh
+- Navigation Drawer (side menu)
 
-A few resources to get you started if this is your first Flutter project:
+## 📱 Screens Implemented
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+- Home Screen
+- Notification Screen
+- Borrowed Item List
+- Package Filter UI
+- Custom Cards (Bottom-right curve, Earnings card, etc.)
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## 📦 Dependencies
+
+```yaml
+dependencies:
+  flutter:
+    sdk: flutter
+
+ cupertino_icons: ^1.0.8
+  get: ^4.7.2
+  flutter_typeahead: ^5.2.0
+  intl: ^0.20.2
+```
