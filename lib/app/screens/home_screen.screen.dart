@@ -88,6 +88,7 @@ class AppDrawer extends StatelessWidget {
             title: const Text('Sales Details',
                 style: TextStyle(color: Colors.white)),
             onTap: () {
+              Get.back();
               Get.toNamed(AppRoutes.orderdetails);
             },
           ),
@@ -96,6 +97,7 @@ class AppDrawer extends StatelessWidget {
             title: const Text('Notification',
                 style: TextStyle(color: Colors.white)),
             onTap: () {
+              Get.back();
               Get.toNamed(AppRoutes.notifications);
             },
           ),
