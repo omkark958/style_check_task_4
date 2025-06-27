@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:style_check_task_4/app/routes/app_routes.dart';
 import 'package:style_check_task_4/app/widgets/borrowed_item_screen.dart';
 import 'package:style_check_task_4/app/widgets/reusablewidgets/active_deals.dart';
 import 'package:style_check_task_4/app/widgets/reusablewidgets/bottom_right_curve_card.dart';
@@ -13,10 +15,10 @@ class HomeScreen extends StatelessWidget {
       backgroundColor: Colors.black,
       appBar: AppBar(
         backgroundColor: const Color(0xFF1C1C1E),
-        title: const Row(
+        title: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Row(
+            const Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 Icon(
@@ -32,10 +34,13 @@ class HomeScreen extends StatelessWidget {
                 ),
               ],
             ),
-            Icon(
-              Icons.notifications_sharp,
-              color: Colors.white,
-            ),
+            IconButton(
+              onPressed: () => Get.toNamed(AppRoutes.notifications),
+              icon: const Icon(
+                Icons.notifications_sharp,
+                color: Colors.white,
+              ),
+            )
           ],
         ),
       ),

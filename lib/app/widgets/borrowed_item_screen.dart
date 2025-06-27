@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_typeahead/flutter_typeahead.dart';
+import 'package:get/get.dart';
 import 'package:style_check_task_4/app/widgets/reusablewidgets/borrowed_item_card.dart';
 
 class BorrowedItemsScreen extends StatefulWidget {
@@ -264,6 +265,9 @@ class _BorrowedItemsScreenState extends State<BorrowedItemsScreen> {
                               'dueDate': '05 July 2025',
                             });
                             filterItems(); // reapply filter
+                            Get.snackbar(
+                                "Quick Add", "Borrower added successfully",
+                                colorText: Colors.blue);
                           });
                         },
                         child: Container(
