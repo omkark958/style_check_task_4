@@ -2,6 +2,7 @@ import 'package:get/get.dart';
 import 'package:style_check_task_4/app/binding/horizontaldrag_bind.dart';
 import 'package:style_check_task_4/app/screens/home_screen.screen.dart';
 import 'package:style_check_task_4/app/screens/sales_order_details.screen.dart';
+import 'package:style_check_task_4/app/widgets/notification_screen.dart';
 import '../views/loading_view.dart';
 import 'app_routes.dart';
 
@@ -13,5 +14,9 @@ class AppPages {
         name: AppRoutes.orderdetails,
         page: () => SalesOrderDetailsScreen(),
         binding: HorizontaldragBind()),
+    GetPage(
+      name: AppRoutes.notifications,
+      page: () => const NotificationScreen(),
+    ),
   ];
 }

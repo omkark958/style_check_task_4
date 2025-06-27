@@ -5,6 +5,7 @@ import "package:get/get.dart";
 import "package:style_check_task_4/app/controllers/horizontal_drag_tab.controller.dart";
 import "package:style_check_task_4/app/model/price_breakdown.dart";
 import "package:style_check_task_4/app/model/product_details.dart";
+import "package:style_check_task_4/app/routes/app_routes.dart";
 import "package:style_check_task_4/app/widgets/horizontally_drag_tab.dart";
 import "package:style_check_task_4/app/widgets/packages_filter_bar.dart";
 import "package:style_check_task_4/app/widgets/price_breakdown_screen.dart";
@@ -25,20 +26,25 @@ class SalesOrderDetailsScreen extends GetView<HorizontalDragTabController> {
           color: Colors.white,
         ),
         backgroundColor: const Color(0xFF1C1C1E),
-        title: const Row(
+        title: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Text(
+            const Text(
               "Sales Order Details",
               style: TextStyle(color: Colors.white),
             ),
             Row(
               children: [
-                Icon(
-                  Icons.notifications_sharp,
-                  color: Colors.white,
+                IconButton(
+                  onPressed: () {
+                    Get.toNamed(AppRoutes.notifications);
+                  },
+                  icon: const Icon(
+                    Icons.notifications_sharp,
+                    color: Colors.white,
+                  ),
                 ),
-                Icon(
+                const Icon(
                   Icons.more_vert,
                   color: Colors.white,
                 ),

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:style_check_task_4/app/routes/app_routes.dart';
 import 'package:style_check_task_4/app/widgets/borrowed_item_screen.dart';
 import 'package:style_check_task_4/app/widgets/reusablewidgets/active_deals.dart';
 import 'package:style_check_task_4/app/widgets/reusablewidgets/bottom_right_curve_card.dart';
@@ -13,32 +15,22 @@ class HomeScreen extends StatelessWidget {
       backgroundColor: Colors.black,
       appBar: AppBar(
         backgroundColor: const Color(0xFF1C1C1E),
-        title: const Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                Icon(
-                  Icons.menu,
-                  color: Colors.white,
-                ),
-                SizedBox(
-                  width: 70,
-                ),
-                Text(
-                  "Co-Retailing",
-                  style: TextStyle(color: Colors.white),
-                ),
-              ],
-            ),
-            Icon(
-              Icons.notifications_sharp,
-              color: Colors.white,
-            ),
-          ],
+        title:
+            const Text("Co-Retailing", style: TextStyle(color: Colors.white)),
+        leading: Builder(
+          builder: (context) => IconButton(
+            icon: const Icon(Icons.menu, color: Colors.white),
+            onPressed: () => Scaffold.of(context).openDrawer(),
+          ),
         ),
+        actions: [
+          IconButton(
+            onPressed: () => Get.toNamed(AppRoutes.notifications),
+            icon: const Icon(Icons.notifications_sharp, color: Colors.white),
+          ),
+        ],
       ),
+      drawer: const AppDrawer(), // ← Step 2
       body: RefreshIndicator(
         onRefresh: () async {},
         child: SafeArea(
@@ -46,8 +38,8 @@ class HomeScreen extends StatelessWidget {
             padding: const EdgeInsets.all(10),
             children: const [
               Wrap(
-                spacing: 16, // horizontal spacing
-                runSpacing: 16, // vertical spacing
+                spacing: 16,
+                runSpacing: 16,
                 children: [
                   BottomRightCurveCard(),
                   BottomRightCurveCard(),
@@ -67,6 +59,54 @@ class HomeScreen extends StatelessWidget {
             ],
           ),
         ),
+      ),
+    );
+  }
+}
+
+class AppDrawer extends StatelessWidget {
+  const AppDrawer({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Drawer(
+      backgroundColor: const Color(0xFF1C1C1E),
+      child: ListView(
+        padding: EdgeInsets.zero,
+        children: [
+          Container(
+            color: Colors.black,
+            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 24),
+            alignment: Alignment.centerLeft,
+            child: const Text(
+              'Welcome, Omkar!',
+              style: TextStyle(color: Colors.white, fontSize: 18),
+            ),
+          ),
+          ListTile(
+            leading: const Icon(Icons.dashboard, color: Colors.white),
+            title:
+                const Text('Dashboard', style: TextStyle(color: Colors.white)),
+            onTap: () {},
+          ),
+          ListTile(
+            leading: const Icon(Icons.store, color: Colors.white),
+            title: const Text('Marketplace',
+                style: TextStyle(color: Colors.white)),
+            onTap: () {},
+          ),
+          ListTile(
+            leading: const Icon(Icons.settings, color: Colors.white),
+            title:
+                const Text('Settings', style: TextStyle(color: Colors.white)),
+            onTap: () {},
+          ),
+          ListTile(
+            leading: const Icon(Icons.logout, color: Colors.white),
+            title: const Text('Logout', style: TextStyle(color: Colors.white)),
+            onTap: () {},
+          ),
+        ],
       ),
     );
   }
